@@ -1,0 +1,12 @@
+body {
+    background-image: url()
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+#general-container {
+    border: solid black;
+    margin: 0px 200px 0px;
+}
