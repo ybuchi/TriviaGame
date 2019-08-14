@@ -1,5 +1,5 @@
 body {
-    background-image: url()
+    background-image: url("/Users/Yannik/Bootcamp/Homework5/TriviaGame/assets/images/web-3120321_1920.png")
 }
 
 h1, h3 {
@@ -8,5 +8,6 @@ h1, h3 {
 
 #general-container {
     border: solid black;
+    border-radius: 5px;
     margin: 0px 200px 0px;
 }
