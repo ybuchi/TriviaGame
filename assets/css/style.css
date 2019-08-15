@@ -1,13 +1,45 @@
-body {
-    background-image: url("/Users/Yannik/Bootcamp/Homework5/TriviaGame/assets/images/web-3120321_1920.png")
+body{
+    background-image: url("/Users/Yannik/Bootcamp/Homework5/TriviaGame/assets/images/web-3120321_1920.png");
+    background-position: 50% 30%;
 }
 
 h1, h3 {
     text-align: center;
+    opacity: 1;
+}
+.inside-jumbotron{
+    opacity:1;
 }
 
 #general-container {
     border: solid black;
     border-radius: 5px;
     margin: 0px 200px 0px;
+    background-color:rgb(128,128,128, 0.7);
+    height: 700px;
+    text-align: center;
+}
+
+#game-title{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 100px;
+    color: rgb(0, 76, 255);
+    text-shadow: 2px 2px black;
+}
+
+#game-subtitle{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    text-shadow: 2px 2px white;
+}
+#action-play{
+    text-align: center;
+    height: 100px;
+    width: 200px;
+    border: solid turquoise;
+    background-color: rgb(79, 128, 0);
+    border-radius: 4px;
+    font-family: 'Lexend Giga', sans-serif;
+    font-size: 30px;
+
 }
