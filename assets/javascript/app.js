@@ -13,7 +13,6 @@ function Question(question, answerOption1, answerOption2, answerOption3, answerO
     this.answer = answer;
     this.info = info;
 }
-
 //Create variables for each question (we can also add another property for message in which we can say a little more information)
 
 function initiateQuestions(){
@@ -30,7 +29,7 @@ console.log(questionsArray);
 var clockRunning = false;
 var intervalId;
 //The timer will start at 5min
-var time = 300;
+var time = 10;
 
 
 window.onload = function() {
@@ -44,18 +43,25 @@ function startTimer(){
     if (!clockRunning){
         intervalId = setInterval(count, 1000);
         clockRunning = true;
-    }else if (time === 0) {
-        clockRunning = false;
-        console.log("The timer is done.");
+
     }
 }
+//Define stop timer function
+function stop() {
+
+    // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+    clearInterval(intervalId);
+    console.log("The intervalID value is: " + intervalId);
+    clockRunning = false;
+    console.log("The Stop function has been fired.");
+  };
 
 function count() {
     time--;
     var converted = timeConverter(time);
     console.log(converted);
 
-    $("#timer").text(converted);
+    $("#timer").html("TIME LEFT: " + converted + "<br>");
 
 }
 function timeConverter(t) {
@@ -87,24 +93,28 @@ function changePage(targetDivId){
     initiateQuestions();
     //Empty the div first...
     $(targetDivId).empty();
+    
+    //Create the div that will contain the timer:
+    $(targetDivId).append("<div id='timer'>");
+    $("#timer").text("TIME LEFT");
+
+
     //Create a form that will contain all the questions:
-    $(targetDivId).append("<div id='timer'>")
-    $(targetDivId).append("<form id ='question-form'>")
+    $(targetDivId).append("<form id ='question-form'>");
     
     //... and create a for loop to create divs for each question
     for (i = 0; i < questionsArray.length; i++){
         $("#question-form").append("Question"+[i+1]+ ":<br>" +questionsArray[i].question +
-         "<br><input type='radio' name ='answer' value='option'> "+questionsArray[i].answerOption1 + "<br><input type='radio' name ='answer' value='option'>" + questionsArray[i].answerOption2 + "<br><input type='radio' name ='answer' value='option'>" + questionsArray[i].answerOption3 + "<br><input type='radio' name ='answer' value='option'>" + questionsArray[i].answerOption4 + "<br><input type='radio' name ='answer' value='option'>" + questionsArray[i].answerOption5 + "<br><br>");
-
+         "<br><input type='radio' name ='option1' value='option'> "+questionsArray[i].answerOption1 + "<br><input type='radio' name ='option2' value='option'>" + questionsArray[i].answerOption2 + "<br><input type='radio' name ='option3' value='option'>" + questionsArray[i].answerOption3 + "<br><input type='radio' name ='option4' value='option'>" + questionsArray[i].answerOption4 + "<br><input type='radio' name ='option5' value='option'>" + questionsArray[i].answerOption5 + "<br><br>");
     }
     //Create a submit button that the user will click on if they are done before the timer finsihes
     var submitButton = $("<button class='btn' id='btn-submit'>");
     submitButton.text("SUBMIT");
     $(targetDivId).append(submitButton);
 
-    //Build the timer
 
-
+    //Start the timer 
+    startTimer();
 
 };
 
@@ -121,13 +131,16 @@ $( document ).ready(function() {
 $("#actn-play").click(function(){
 
     changePage("#general-container");
+    setTimeout(stop, 10000);
 
     //REcord the user's choice
+    //Look up how to record the user's choice for a radio button. We just need to do it for the correct radio button. 
+
+    //When the timer reaches 0check the answers
+    // setTimeout(stop, 0);
 
     //Compare it to the answer
 
     //If the timer is still running and all questions have 
 });
 
-
-//Build a timer
