@@ -25,7 +25,14 @@ var question1 = new Question("How many continents does Earth have?", "7","5", "1
 
 var question2 = new Question("The Indian subcontinent is the birthplace of how many of the world's major religions?","7","2","4","1","0","4", "The Indian subcontinent is the birthplace of four of the world's major religions: Hinduism, Buddhism, Sikhism and Jainism.");
 
-questionsArray.push(question1, question2);
+var question3 = new Question("What is the highest peak in Europe?", "Monte Rosa", "Matterhorn","Mont Blanc","Mount Elbrus", "Corno Grande", "Mount Elbrus", "While the Mont Blanc is often mistaken as the highest peak in Europe, the title actually belongs to Mount Elbrus (4,741m/15,554ft), situated in Russia, right at the border of the European and Asian continents.");
+
+var question4 = new Question("Which desert is considered as the driest place on Earth?", "Death Valley", "the Sahara Desert", "the Arabian Desert", "the Atamaca Desert", "the Gobi Desert", "the Atamaca Desert", "The Atamaca Desert is considered the driest place on Earth, with some parts having no recorded precipitations since recordings began. Other parts haven't received precipitation in over 40 years!");
+
+var question5 = new Question("Which country does not officially have a capital?", "the Vatican", "Micronesia", "Saint Kitts & Nevis", "Nauru", "Tuvalu", "Nauru", "Nauru is actually the only country in the world with no official, or de jure, capital.");
+
+
+questionsArray.push(question1, question2, question3, question4, question5);
 console.log(questionsArray);
 }
 
@@ -119,10 +126,13 @@ function changePage(targetDivId){
     initiateQuestions();
     //Empty the div first...
     $(targetDivId).empty();
+
+    //This is where you can change the height of the general container to fit all of the questions:
+    $(targetDivId).css("height", "1000px");
     
     //Create the div that will contain the timer:
     $(targetDivId).append("<div id='timer'>");
-    $("#timer").text("TIME LEFT");
+    $("#timer").text("TIME LEFT: ");
 
 
     //Create a form that will contain all the questions:
@@ -154,20 +164,16 @@ function resultsPage(targetDivId){
     $(targetDivId).append("<h1>TIME'S UP!</h1>");
 
     //Display the number of correct answers
-    $(targetDivId).append("CORRECT ANSWERS: " + correctAnswers + "<br>");
-    $(targetDivId).append("INCORRECT ANSWERS: " + incorrectAnswers + "<br>");
-    $(targetDivId).append("UNANSWERED: " + unansweredAnswers);
-        
-    
-
-
-    //Build the page with the results
-    //If a radio button has been filled, check it
-        
+    $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
+    $(targetDivId).append("<div id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
+    $(targetDivId).append("<div id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
+             
 }
 
+//Add a function similar to resultsPage that will display the results if the user submits the form before the time is over
 
 
+///
 
 
 
@@ -180,15 +186,6 @@ $("#actn-play").click(function(){
 
     changePage("#general-container");
     setTimeout(stop, 10000);
-
-    //REcord the user's choice
-    //Look up how to record the user's choice for a radio button. We just need to do it for the correct radio button. 
-
-    //When the timer reaches 0check the answers
-    // setTimeout(stop, 0);
-
-    //Compare it to the answer
-
-    //If the timer is still running and all questions have 
 });
+
 
