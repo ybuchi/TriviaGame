@@ -57,10 +57,9 @@ function stop() {
     console.log("The intervalID value is: " + intervalId);
     clockRunning = false;
     console.log("The Stop function has been fired.");
-    //Display: "Time's Up!"
-    $("#timer").html("TIME'S UP!")
+
     //Trigger resultsPage to show the results
-    // resultsPage("#general-container");
+    resultsPage("#general-container");
 
 
   };
@@ -121,7 +120,6 @@ function changePage(targetDivId){
     submitButton.text("SUBMIT");
     $(targetDivId).append(submitButton);
 
-
     //Start the timer 
     startTimer();
 
@@ -133,7 +131,7 @@ function resultsPage(targetDivId){
     //For each question, check the selected answer
     for (i = 0; i < questionsArray.length; i++){
     //If the selection is the same as the answer
-    if (questionsArray[i].answer === ($("input[type='radio'][name='question"+i+1+""))){
+    if (questionsArray[i].answer === ($("input[name=question"+i+1+"choice]:checked").val())){
 
         correctAnswers++;
 
@@ -142,6 +140,9 @@ function resultsPage(targetDivId){
     }
     //Empty the target div
     $(targetDivId).empty();
+
+            //Display: "Time's Up!"
+            $(targetDivId).append("<h1>TIME'S UP!</h1>");
 
     //Display the number of correct answers
     $(targetDivId).append("CORRECT ANSWERS: " + correctAnswers);
