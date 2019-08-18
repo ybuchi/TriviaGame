@@ -1,5 +1,7 @@
 //Variable for correct answers
 var correctAnswers = 0;
+var incorrectAnswers = 0;
+var unansweredAnswers = 0;
 
 //Create and store the questions:
 var questionsArray = [];
@@ -67,7 +69,11 @@ function stop() {
 
         if (userChoice === questionsArray[i].answer){
             correctAnswers++;
-        }
+        } else if (typeof userChoice === "undefined"){
+            unansweredAnswers++;
+        }else{
+            incorrectAnswers++;
+        };
         console.log("correctAnswers:" + correctAnswers);
     };
 
@@ -148,7 +154,9 @@ function resultsPage(targetDivId){
     $(targetDivId).append("<h1>TIME'S UP!</h1>");
 
     //Display the number of correct answers
-    $(targetDivId).append("CORRECT ANSWERS: " + correctAnswers);
+    $(targetDivId).append("CORRECT ANSWERS: " + correctAnswers + "<br>");
+    $(targetDivId).append("INCORRECT ANSWERS: " + incorrectAnswers + "<br>");
+    $(targetDivId).append("UNANSWERED: " + unansweredAnswers);
         
     
 
