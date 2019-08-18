@@ -155,24 +155,15 @@ function changePage(targetDivId){
 
     //If the player clicks the submit button, stop the timer and then go to the results page
     $("#btn-submit").click(function(){
+        clearTimeout(timeoutVar);
         stop();
-        //Empty the target div
-        $(targetDivId).empty();
 
-        //Display: "Time's Up!"
-        $(targetDivId).append("<h1>RESULTS:</h1>");
-
-        //Display the number of correct answers
-        $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
-        $(targetDivId).append("<div id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
-        $(targetDivId).append("<div id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
-
-        
+    });
 
 
-        });
 
-};
+
+}
 
 function resultsPage(targetDivId){
     console.log("the resultsPage function has fired");
@@ -182,36 +173,14 @@ function resultsPage(targetDivId){
     $(targetDivId).empty();
 
     //Display: "Time's Up!"
-    $(targetDivId).append("<h1>TIME'S UP!</h1>");
+    $(targetDivId).append("<h1 class='results-pg' id='timesup'>TIME'S UP!</h1>");
 
     //Display the number of correct answers
-    $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
-    $(targetDivId).append("<div id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
-    $(targetDivId).append("<div id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
+    $(targetDivId).append("<div class='results-pg' id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
+    $(targetDivId).append("<div class='results-pg' id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
+    $(targetDivId).append("<div class='results-pg' id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
              
-}
-function submitPage(targetDivId){
-    console.log("the resultsPage function has fired");
-
-
-    //Empty the target div
-    $(targetDivId).empty();
-
-    //Display: "Time's Up!"
-    $(targetDivId).append("<h1>RESULTS</h1>");
-
-    //Display the number of correct answers
-    $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
-    $(targetDivId).append("<div id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
-    $(targetDivId).append("<div id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
-             
-}
-
-//Add a function similar to resultsPage that will display the results if the user submits the form before the time is over
-
-
-///
-
+};
 
 
 $( document ).ready(function() {
@@ -222,9 +191,8 @@ $( document ).ready(function() {
 $("#actn-play").click(function(){
 
     changePage("#general-container");
-    setTimeout(stop, 10000);
-});
+    console.log($("#timer").text());
 
-
-
-
+    timeoutVar = setTimeout(stop, 10000);
+    
+})

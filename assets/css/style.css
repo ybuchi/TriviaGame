@@ -51,3 +51,26 @@ h1, h3 {
     font-size: 20px;
     font-family: 'Lexend Giga', sans-serif;
 }
+
+/* Styles for the RESULTS PAGE */
+
+.results-pg{
+    font-size: 30px;
+    font-family: 'Patrick Hand', cursive;
+}
+#correct-answers{
+
+    color: green;
+}
+#incorrect-answers{
+
+    color: brown;
+}
+#unanswered-answers{
+
+    color: beige;
+}
+#timesup{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 50px;
+}
