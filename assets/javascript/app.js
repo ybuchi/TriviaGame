@@ -1,3 +1,6 @@
+//Variable for correct answers
+var correctAnswers = 0;
+
 //Create and store the questions:
 var questionsArray = [];
 
@@ -16,9 +19,9 @@ function Question(question, answerOption1, answerOption2, answerOption3, answerO
 //Create variables for each question (we can also add another property for message in which we can say a little more information)
 
 function initiateQuestions(){
-var question1 = new Question("How many continents does Earth have?", 7,5,10,3,"There's actually no such thing as continents.","Earth has seven continents: Africa, Europe, Asia, North America, South American, Oceania, Antarctica.");
+var question1 = new Question("How many continents does Earth have?", 7,5,10,3,"There's actually no such thing as continents.",7,"Earth has seven continents: Africa, Europe, Asia, North America, South American, Oceania, Antarctica.");
 
-var question2 = new Question("The Indian subcontinent is the birthplace of how many of the world's major religions?",4,7,2,1,0, "The Indian subcontinent is the birthplace of four of the world's major religions: Hinduism, Buddhism, Sikhism and Jainism.");
+var question2 = new Question("The Indian subcontinent is the birthplace of how many of the world's major religions?",7,2,4,1,0,4, "The Indian subcontinent is the birthplace of four of the world's major religions: Hinduism, Buddhism, Sikhism and Jainism.");
 
 questionsArray.push(question1, question2);
 console.log(questionsArray);
@@ -54,6 +57,12 @@ function stop() {
     console.log("The intervalID value is: " + intervalId);
     clockRunning = false;
     console.log("The Stop function has been fired.");
+    //Display: "Time's Up!"
+    $("#timer").html("TIME'S UP!")
+    //Trigger resultsPage to show the results
+    // resultsPage("#general-container");
+
+
   };
 
 function count() {
@@ -105,7 +114,7 @@ function changePage(targetDivId){
     //... and create a for loop to create divs for each question
     for (i = 0; i < questionsArray.length; i++){
         $("#question-form").append("Question"+[i+1]+ ":<br>" +questionsArray[i].question +
-         "<br><input type='radio' name ='option1' value='option'> "+questionsArray[i].answerOption1 + "<br><input type='radio' name ='option2' value='option'>" + questionsArray[i].answerOption2 + "<br><input type='radio' name ='option3' value='option'>" + questionsArray[i].answerOption3 + "<br><input type='radio' name ='option4' value='option'>" + questionsArray[i].answerOption4 + "<br><input type='radio' name ='option5' value='option'>" + questionsArray[i].answerOption5 + "<br><br>");
+         "<br><input type='radio' name = question"+i+1+"choice value='option'checked/> "+questionsArray[i].answerOption1 + "<br><input type='radio' name =question"+i+1+"choice value='option'/>" + questionsArray[i].answerOption2 + "<br><input type='radio' name =question"+i+1+"choice value='option'/>" + questionsArray[i].answerOption3 + "<br><input type='radio' name =question"+i+1+"choice value='option'/>" + questionsArray[i].answerOption4 + "<br><input type='radio' name =question"+i+1+"choice value='option'/>" + questionsArray[i].answerOption5 + "<br><br>");
     }
     //Create a submit button that the user will click on if they are done before the timer finsihes
     var submitButton = $("<button class='btn' id='btn-submit'>");
@@ -118,7 +127,33 @@ function changePage(targetDivId){
 
 };
 
-//Build the timer
+function resultsPage(targetDivId){
+    console.log("the resultsPage function has fired");
+
+    //For each question, check the selected answer
+    for (i = 0; i < questionsArray.length; i++){
+    //If the selection is the same as the answer
+    if (questionsArray[i].answer === ($("input[type='radio'][name='question"+i+1+""))){
+
+        correctAnswers++;
+
+    };
+
+    }
+    //Empty the target div
+    $(targetDivId).empty();
+
+    //Display the number of correct answers
+    $(targetDivId).append("CORRECT ANSWERS: " + correctAnswers);
+        
+    
+
+
+    //Build the page with the results
+    //If a radio button has been filled, check it
+        
+ 
+}
 
 
 
