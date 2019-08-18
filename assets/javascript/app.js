@@ -89,6 +89,8 @@ function stop() {
 
   };
 
+
+
 function count() {
     time--;
     var converted = timeConverter(time);
@@ -151,6 +153,25 @@ function changePage(targetDivId){
     //Start the timer 
     startTimer();
 
+    //If the player clicks the submit button, stop the timer and then go to the results page
+    $("#btn-submit").click(function(){
+        stop();
+        //Empty the target div
+        $(targetDivId).empty();
+
+        //Display: "Time's Up!"
+        $(targetDivId).append("<h1>RESULTS:</h1>");
+
+        //Display the number of correct answers
+        $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
+        $(targetDivId).append("<div id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
+        $(targetDivId).append("<div id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
+
+        
+
+
+        });
+
 };
 
 function resultsPage(targetDivId){
@@ -162,6 +183,22 @@ function resultsPage(targetDivId){
 
     //Display: "Time's Up!"
     $(targetDivId).append("<h1>TIME'S UP!</h1>");
+
+    //Display the number of correct answers
+    $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
+    $(targetDivId).append("<div id='incorrect-answers'>INCORRECT ANSWERS: " + incorrectAnswers + "</div><br>");
+    $(targetDivId).append("<div id='unanswered-answers'> UNANSWERED: " + unansweredAnswers + "</div>");
+             
+}
+function submitPage(targetDivId){
+    console.log("the resultsPage function has fired");
+
+
+    //Empty the target div
+    $(targetDivId).empty();
+
+    //Display: "Time's Up!"
+    $(targetDivId).append("<h1>RESULTS</h1>");
 
     //Display the number of correct answers
     $(targetDivId).append("<div id='correct-answers'>CORRECT ANSWERS: " + correctAnswers + "</div><br>");
@@ -187,5 +224,7 @@ $("#actn-play").click(function(){
     changePage("#general-container");
     setTimeout(stop, 10000);
 });
+
+
 
 
