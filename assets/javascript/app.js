@@ -21,15 +21,15 @@ function Question(question, answerOption1, answerOption2, answerOption3, answerO
 //Create variables for each question (we can also add another property for message in which we can say a little more information)
 
 function initiateQuestions(){
-var question1 = new Question("How many continents does Earth have?", "7","5", "10","3","There's actually no such thing as continents.","7","Earth has seven continents: Africa, Europe, Asia, North America, South American, Oceania, Antarctica.");
+var question1 = new Question("How many continents does Earth have?", "7","5", "10","3","There's actually no such thing as continents.","choice1","Earth has seven continents: Africa, Europe, Asia, North America, South American, Oceania, Antarctica.");
 
-var question2 = new Question("The Indian subcontinent is the birthplace of how many of the world's major religions?","7","2","4","1","0","4", "The Indian subcontinent is the birthplace of four of the world's major religions: Hinduism, Buddhism, Sikhism and Jainism.");
+var question2 = new Question("The Indian subcontinent is the birthplace of how many of the world's major religions?","7","2","4","1","0","choice3", "The Indian subcontinent is the birthplace of four of the world's major religions: Hinduism, Buddhism, Sikhism and Jainism.");
 
-var question3 = new Question("What is the highest peak in Europe?", "Monte Rosa", "Matterhorn","Mont Blanc","Mount Elbrus", "Corno Grande", "Mount Elbrus", "While the Mont Blanc is often mistaken as the highest peak in Europe, the title actually belongs to Mount Elbrus (4,741m/15,554ft), situated in Russia, right at the border of the European and Asian continents.");
+var question3 = new Question("What is the highest peak in Europe?", "Monte Rosa", "Matterhorn","Mont Blanc","Mount Elbrus", "Corno Grande", "choice4", "While the Mont Blanc is often mistaken as the highest peak in Europe, the title actually belongs to Mount Elbrus (4,741m/15,554ft), situated in Russia, right at the border of the European and Asian continents.");
 
-var question4 = new Question("Which desert is considered as the driest place on Earth?", "Death Valley", "the Sahara Desert", "the Arabian Desert", "the Atamaca Desert", "the Gobi Desert", "the Atamaca Desert", "The Atamaca Desert is considered the driest place on Earth, with some parts having no recorded precipitations since recordings began. Other parts haven't received precipitation in over 40 years!");
+var question4 = new Question("Which desert is considered as the driest place on Earth?", "Death Valley", "the Sahara Desert", "the Arabian Desert", "the Atamaca Desert", "the Gobi Desert", "choice4", "The Atamaca Desert is considered the driest place on Earth, with some parts having no recorded precipitations since recordings began. Other parts haven't received precipitation in over 40 years!");
 
-var question5 = new Question("Which country does not officially have a capital?", "the Vatican", "Micronesia", "Saint Kitts & Nevis", "Nauru", "Tuvalu", "Nauru", "Nauru is actually the only country in the world with no official, or de jure, capital.");
+var question5 = new Question("Which country does not officially have a capital?", "the Vatican", "Micronesia", "Saint Kitts & Nevis", "Nauru", "Tuvalu", "choice4", "Nauru is actually the only country in the world with no official, or de jure, capital.");
 
 
 questionsArray.push(question1, question2, question3, question4, question5);
@@ -143,7 +143,7 @@ function changePage(targetDivId){
     //... and create a for loop to create divs for each question
     for (i = 0; i < questionsArray.length; i++){
         $("#question-form").append("<div class = 'question-text'>Question"+[i+1]+ ": <br>" +questionsArray[i].question+ "</div>" +
-         "<br><div class = 'radio-inputs'><input type='radio' name = question"+i+1+"choice value= "+questionsArray[i].answerOption1+"> "+questionsArray[i].answerOption1 + "<br><input type='radio' name =question"+i+1+"choice value= "+questionsArray[i].answerOption2+">" + questionsArray[i].answerOption2 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption3+">" + questionsArray[i].answerOption3 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption4+">" + questionsArray[i].answerOption4 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption5+">" + questionsArray[i].answerOption5 + "</div><br><br>");
+         "<br><div class = 'radio-inputs'><input type='radio' name = question"+i+1+"choice value=choice1 "+questionsArray[i].answerOption1+"> "+questionsArray[i].answerOption1 + "<br><input type='radio' name =question"+i+1+"choice value= choice2>" + questionsArray[i].answerOption2 + "<br><input type='radio' name =question"+i+1+"choice value= choice3>" + questionsArray[i].answerOption3 + "<br><input type='radio' name =question"+i+1+"choice value=choice4>" + questionsArray[i].answerOption4 + "<br><input type='radio' name =question"+i+1+"choice value=choice5>" + questionsArray[i].answerOption5 + "</div><br><br>");
     }
     //Create a submit button that the user will click on if they are done before the timer finsihes
     var submitButton = $("<button class='btn' id='btn-submit'>");
