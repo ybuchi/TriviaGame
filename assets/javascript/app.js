@@ -41,7 +41,7 @@ console.log(questionsArray);
 var clockRunning = false;
 var intervalId;
 //The timer will start at 5min, the time here is in seconds
-var time = 10;
+var time = 180;
 
 
 window.onload = function() {
@@ -193,6 +193,6 @@ $("#actn-play").click(function(){
     changePage("#general-container");
     console.log($("#timer").text());
 
-    timeoutVar = setTimeout(stop, 10000);
+    timeoutVar = setTimeout(stop, 180000);
     
 })
