@@ -1,6 +1,6 @@
 /* Style for elements present before the game starts */
 body{
-    background-image: url("/Users/Yannik/Bootcamp/Homework5/TriviaGame/assets/images/web-3120321_1920.png");
+    background-image: url("https://img5.goodfon.com/original/1920x1080/4/a4/tekstura-fon-travel-patterns-vintage-style.jpg");
     background-position: 50% 30%;
 }
 
@@ -16,7 +16,7 @@ h1, h3 {
     border: solid black;
     border-radius: 5px;
     margin: 0px 200px 0px;
-    background-color:rgb(128,128,128, 0.7);
+    background-color:rgba(255, 255, 255, 0.7);
     height: 700px;
     text-align: center;
 }
