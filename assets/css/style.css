@@ -100,3 +100,10 @@ h1, h3 {
     width: 200px;
 }
 
+/* This is for styling the FORM */
+.question-text{
+    font-weight: bold;
+}
+.radio-inputs{
+    display: inline-block;
+}

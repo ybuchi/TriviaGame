@@ -142,8 +142,8 @@ function changePage(targetDivId){
     
     //... and create a for loop to create divs for each question
     for (i = 0; i < questionsArray.length; i++){
-        $("#question-form").append("Question"+[i+1]+ ":<br>" +questionsArray[i].question +
-         "<br><input type='radio' name = question"+i+1+"choice value= "+questionsArray[i].answerOption1+"> "+questionsArray[i].answerOption1 + "<br><input type='radio' name =question"+i+1+"choice value= "+questionsArray[i].answerOption2+">" + questionsArray[i].answerOption2 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption3+">" + questionsArray[i].answerOption3 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption4+">" + questionsArray[i].answerOption4 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption5+">" + questionsArray[i].answerOption5 + "<br><br>");
+        $("#question-form").append("<div class = 'question-text'>Question"+[i+1]+ ": <br>" +questionsArray[i].question+ "</div>" +
+         "<br><div class = 'radio-inputs'><input type='radio' name = question"+i+1+"choice value= "+questionsArray[i].answerOption1+"> "+questionsArray[i].answerOption1 + "<br><input type='radio' name =question"+i+1+"choice value= "+questionsArray[i].answerOption2+">" + questionsArray[i].answerOption2 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption3+">" + questionsArray[i].answerOption3 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption4+">" + questionsArray[i].answerOption4 + "<br><input type='radio' name =question"+i+1+"choice value="+questionsArray[i].answerOption5+">" + questionsArray[i].answerOption5 + "</div><br><br>");
     }
     //Create a submit button that the user will click on if they are done before the timer finsihes
     var submitButton = $("<button class='btn' id='btn-submit'>");
