@@ -57,13 +57,12 @@ h1, h3 {
 }
 
 #timer{
-    width: 300px;
-    border: solid black;
-    font-size: 30px;
+    width: 200px;
+    font-size: 25px;
     font-family: 'Gloria Hallelujah', cursive;
     margin: auto;
     margin-top: 5px;
-    background-color: beige;
+    margin-bottom: 5px;
 
 }
 
@@ -90,9 +89,14 @@ h1, h3 {
     font-size: 50px;
 }
 #time-text{
-    font-weight: lighter;
+    font-weight: bold;
+    margin-bottom: 0px;
 }
 #clock{
+    font-family: 'Lexend Giga', sans-serif;
     font-weight: bold;
+    background-color: beige;
+    border: solid black;
+    width: 200px;
 }
 

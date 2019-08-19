@@ -134,7 +134,7 @@ function changePage(targetDivId){
     
     //Create the div that will contain the timer:
     $(targetDivId).append("<div id='timer'>");
-    $("#timer").html("<p id='time-text'>TIME LEFT:<br> <span id='clock'>05:00</span></p>");
+    $("#timer").html("<p id='time-text'>TIME LEFT:<br> <div id='clock'>05:00</div></p>");
 
 
     //Create a form that will contain all the questions:
