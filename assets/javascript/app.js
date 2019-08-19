@@ -41,7 +41,7 @@ console.log(questionsArray);
 var clockRunning = false;
 var intervalId;
 //The timer will start at 5min, the time here is in seconds
-var time = 180;
+var time = 300;
 
 
 window.onload = function() {
@@ -96,7 +96,7 @@ function count() {
     var converted = timeConverter(time);
     console.log(converted);
 
-    $("#timer").html("TIME LEFT: " + converted + "<br>");
+    $("#clock").html(converted);
 
 }
 function timeConverter(t) {
@@ -134,7 +134,7 @@ function changePage(targetDivId){
     
     //Create the div that will contain the timer:
     $(targetDivId).append("<div id='timer'>");
-    $("#timer").text("TIME LEFT: ");
+    $("#timer").html("<p id='time-text'>TIME LEFT:<br> <span id='clock'>05:00</span></p>");
 
 
     //Create a form that will contain all the questions:
@@ -193,6 +193,6 @@ $("#actn-play").click(function(){
     changePage("#general-container");
     console.log($("#timer").text());
 
-    timeoutVar = setTimeout(stop, 180000);
+    timeoutVar = setTimeout(stop, 300000);
     
 })

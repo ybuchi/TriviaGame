@@ -57,10 +57,14 @@ h1, h3 {
 }
 
 #timer{
-    width: 60%;
+    width: 300px;
     border: solid black;
     font-size: 30px;
     font-family: 'Gloria Hallelujah', cursive;
+    margin: auto;
+    margin-top: 5px;
+    background-color: beige;
+
 }
 
 /* Styles for the RESULTS PAGE */
@@ -85,3 +89,10 @@ h1, h3 {
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 50px;
 }
+#time-text{
+    font-weight: lighter;
+}
+#clock{
+    font-weight: bold;
+}
+
