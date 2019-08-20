@@ -130,7 +130,7 @@ function changePage(targetDivId){
     $(targetDivId).empty();
 
     //This is where you can change the height of the general container to fit all of the questions:
-    $(targetDivId).css("height", "1000px");
+    $(targetDivId).css("height", "1600px");
     
     //Create the div that will contain the timer:
     $(targetDivId).append("<div id='timer'>");
@@ -143,7 +143,7 @@ function changePage(targetDivId){
     //... and create a for loop to create divs for each question
     for (i = 0; i < questionsArray.length; i++){
         $("#question-form").append("<div class = 'question-text'>Question"+[i+1]+ ": <br>" +questionsArray[i].question+ "</div>" +
-         "<br><div class = 'radio-inputs'><input type='radio' name = question"+i+1+"choice value=choice1 "+questionsArray[i].answerOption1+"> "+questionsArray[i].answerOption1 + "<br><input type='radio' name =question"+i+1+"choice value= choice2>" + questionsArray[i].answerOption2 + "<br><input type='radio' name =question"+i+1+"choice value= choice3>" + questionsArray[i].answerOption3 + "<br><input type='radio' name =question"+i+1+"choice value=choice4>" + questionsArray[i].answerOption4 + "<br><input type='radio' name =question"+i+1+"choice value=choice5>" + questionsArray[i].answerOption5 + "</div><br><br>");
+         "<br><div class = 'radio-inputs'><input class = 'radiodiv' type='radio' name = question"+i+1+"choice value=choice1 "+questionsArray[i].answerOption1+"> "+questionsArray[i].answerOption1 + "<br><input class = 'radiodiv' type='radio' name =question"+i+1+"choice value= choice2>" + questionsArray[i].answerOption2 + "<br><input class = 'radiodiv' type='radio' name =question"+i+1+"choice value= choice3>" + questionsArray[i].answerOption3 + "<br><input class = 'radiodiv' type='radio' name =question"+i+1+"choice value=choice4>" + questionsArray[i].answerOption4 + "<br><input class = 'radiodiv' type='radio' name =question"+i+1+"choice value=choice5>" + questionsArray[i].answerOption5 + "</div><br><br>");
     }
     //Create a submit button that the user will click on if they are done before the timer finsihes
     var submitButton = $("<button class='btn' id='btn-submit'>");
