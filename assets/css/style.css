@@ -15,7 +15,7 @@ h1, h3 {
 #general-container {
     border: solid black;
     border-radius: 5px;
-    margin: 0px 200px 0px;
+    margin: 200px 200px 0px;
     background-color:rgba(255, 255, 255, 0.7);
     height: 700px;
     text-align: center;
@@ -57,17 +57,24 @@ h1, h3 {
 }
 
 #timer{
-    width: 200px;
+    width: 100%;
+    text-align: center;
     font-size: 25px;
     font-family: 'Gloria Hallelujah', cursive;
     margin: auto;
-    margin-top: 5px;
     margin-bottom: 5px;
+    background-color: rgb(149, 149, 149, 0.8);
+    position: fixed;
+    right: 0;
+    top: 0;
+    /* margin-top: -2.5em; */
 
 }
 
 /* Styles for the RESULTS PAGE */
-
+#menu {
+    
+  }
 .results-pg{
     font-size: 30px;
     font-family: 'Patrick Hand', cursive;
@@ -91,13 +98,18 @@ h1, h3 {
 #time-text{
     font-weight: bold;
     margin-bottom: 0px;
+    text-align: center;
 }
 #clock{
     font-family: 'Lexend Giga', sans-serif;
     font-weight: bold;
+    text-align: center;
     background-color: beige;
     border: solid black;
     width: 200px;
+    margin: auto;
+
+
 }
 
 /* This is for styling the FORM */
