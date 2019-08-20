@@ -131,6 +131,8 @@ function changePage(targetDivId){
 
     //This is where you can change the height of the general container to fit all of the questions:
     $(targetDivId).css("height", "2400px");
+    $(targetDivId).css("margin", "200px 200px 0px");
+    
     
     //Create the div that will contain the timer:
     $(targetDivId).append("<div id='timer'>");
